@@ -1,4 +1,4 @@
-package com.crud.library;
+package com.crud.library.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class Volume {
     @NotNull
     @GeneratedValue
     @Column(name = "ID", unique = true)
-    private Long idCopy;
+    private Long idVolume;
 
     @Column(name = "ID_TITLE")
     private Long idTitle;

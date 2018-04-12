@@ -1,4 +1,4 @@
-package com.crud.library;
+package com.crud.library.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

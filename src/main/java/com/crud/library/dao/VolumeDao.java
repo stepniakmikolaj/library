@@ -1,6 +1,6 @@
 package com.crud.library.dao;
 
-import com.crud.library.Volume;
+import com.crud.library.model.Volume;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.crud.library;
+package com.crud.library.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,11 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity(name = "LOANS")
 public class Borrowing {
+
+    @Id
+    @NotNull
+    @Column(name = "ID", unique = true)
+    private Long idRegisterOfBorrowings;
 
     @Id
     @NotNull

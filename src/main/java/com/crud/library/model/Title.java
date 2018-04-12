@@ -1,4 +1,4 @@
-package com.crud.library;
+package com.crud.library.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ public class Title {
 
     @Id
     @NotNull
-    @Column(name = "TITLE_ID", unique = true)
+    @Column(name = "ID", unique = true)
     private Long idTitle;
 
     @Column(name = "TITLE")

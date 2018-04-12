@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BorrowingDto {
-    private Long idCopy;
+    private Long idVolume;
     private Long idReader;
     private Date rented;
     private Date returned;

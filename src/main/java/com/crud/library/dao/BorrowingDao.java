@@ -1,11 +1,8 @@
 package com.crud.library.dao;
 
-import com.crud.library.Borrowing;
-import com.crud.library.Volume;
+import com.crud.library.model.Borrowing;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
-
 public interface BorrowingDao extends CrudRepository<Borrowing, Long> {
-    Borrowing findVolumeByIdTitle(Long idTitle);
+    Borrowing findBorrowingByIdTitle(Long idTitle);
 }
