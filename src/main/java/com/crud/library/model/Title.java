@@ -3,10 +3,7 @@ package com.crud.library.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -15,9 +12,9 @@ import java.util.Date;
 public class Title {
 
     @Id
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true)
-    private Long idTitle;
+    private Long id;
 
     @Column(name = "TITLE")
     private String title;

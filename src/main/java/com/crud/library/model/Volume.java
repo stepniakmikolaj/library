@@ -14,18 +14,19 @@ import javax.validation.constraints.NotNull;
 public class Volume {
 
     @Id
-    @NotNull
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true)
-    private Long idVolume;
+    private Long id;
 
+    @NotNull
     @Column(name = "ID_TITLE")
     private Long idTitle;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "STATUS")
-    private String status;
+    private Status status;
 
-    public Volume(final Long idTitle, final String status) {
+    public Volume(final Long idTitle, final Status status) {
         this.idTitle = idTitle;
         this.status = status;
     }

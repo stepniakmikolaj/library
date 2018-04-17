@@ -3,11 +3,7 @@ package com.crud.library.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -16,10 +12,9 @@ import java.util.Date;
 public class Reader {
 
     @Id
-    @GeneratedValue
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true)
-    private Long idReader;
+    private Long id;
 
     @Column(name = "FIRST_NAME")
     private String firstName;

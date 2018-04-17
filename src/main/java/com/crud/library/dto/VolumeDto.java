@@ -1,5 +1,6 @@
 package com.crud.library.dto;
 
+import com.crud.library.model.Status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,5 +12,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class VolumeDto {
     private Long idTitle;
-    private String status;
+    private Status status;
 }

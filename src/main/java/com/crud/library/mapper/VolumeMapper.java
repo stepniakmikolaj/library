@@ -9,16 +9,21 @@ import java.util.stream.Collectors;
 
 @Component
 public class VolumeMapper {
-
     public Volume mapToVolume(final VolumeDto volumeDto) {
-        return new Volume(volumeDto.getIdTitle(), volumeDto.getStatus());
+        return new Volume(
+                volumeDto.getIdTitle(),
+                volumeDto.getStatus());
     }
 
     public VolumeDto mapToVolumeDto(final Volume volume) {
-        return new VolumeDto(volume.getIdTitle(), volume.getStatus());
+        return new VolumeDto(
+                volume.getIdTitle(),
+                volume.getStatus());
     }
 
     public List<VolumeDto> mapToVolumeList(final List<Volume> volumeList) {
-        return volumeList.stream().map(e -> new VolumeDto(e.getIdTitle(), e.getStatus())).collect(Collectors.toList());
+        return volumeList.stream()
+                .map(this::mapToVolumeDto)
+                .collect(Collectors.toList());
     }
 }

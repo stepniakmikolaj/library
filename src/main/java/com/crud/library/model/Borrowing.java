@@ -1,32 +1,30 @@
 package com.crud.library.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity(name = "LOANS")
+@AllArgsConstructor
+@Entity(name = "BORROWINGS")
 public class Borrowing {
 
     @Id
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true)
-    private Long idRegisterOfBorrowings;
+    private Long id;
 
-    @Id
     @NotNull
     @Column(name = "ID_VOLUME")
     private Long idVolume;
 
-    @Id
     @NotNull
     @Column(name = "ID_READER")
     private Long idReader;
@@ -37,7 +35,7 @@ public class Borrowing {
     @Column(name = "DATE_OF_RETURN")
     private Date dateOfReturn;
 
-    public Borrowing(final Long idVolume, final Long idReader, final Date dateOfRental, final Date dateOfReturn){
+    public Borrowing(Long idVolume, Long idReader, Date dateOfRental, Date dateOfReturn) {
         this.idVolume = idVolume;
         this.idReader = idReader;
         this.dateOfRental = dateOfRental;
