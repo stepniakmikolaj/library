@@ -1,6 +1,6 @@
-package com.crud.library.Service;
+package com.crud.library.service;
 
-import com.crud.library.dao.VolumeDao;
+import com.crud.library.repository.VolumeRepository;
 import com.crud.library.model.Volume;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,17 +13,17 @@ import java.util.Optional;
 @Service
 public class VolumeService {
     @Autowired
-    VolumeDao volumeDao;
+    private VolumeRepository volumeRepository;
 
     public Volume saveVolume(final Volume volume) {
-        return volumeDao.save(volume);
+        return volumeRepository.save(volume);
     }
 
     public Optional<Volume> findVolume(final Long id) {
-        return volumeDao.findById(id);
+        return volumeRepository.findById(id);
     }
 
     public List<Volume> findAllByIdTitle(Long idTitle) {
-        return volumeDao.findAllByIdTitle(idTitle);
+        return volumeRepository.findAllByIdTitle(idTitle);
     }
 }

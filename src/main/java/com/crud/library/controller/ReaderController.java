@@ -1,6 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.Service.ReaderService;
+import com.crud.library.service.ReaderService;
 import com.crud.library.dto.ReaderDto;
 import com.crud.library.mapper.ReaderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class ReaderController {
 
     @Autowired
-    ReaderService readerService;
+    private ReaderService readerService;
 
     @Autowired
-    ReaderMapper readerMapper;
+    private ReaderMapper readerMapper;
 
     @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
     public void addReader(@RequestBody ReaderDto readerDto) {

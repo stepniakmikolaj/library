@@ -1,6 +1,6 @@
-package com.crud.library.Service;
+package com.crud.library.service;
 
-import com.crud.library.dao.ReaderDao;
+import com.crud.library.repository.ReaderRepository;
 import com.crud.library.model.Reader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +11,9 @@ import javax.transaction.Transactional;
 @Service
 public class ReaderService {
     @Autowired
-    ReaderDao readerDao;
+    private ReaderRepository readerRepository;
 
     public Reader saveReader(final Reader reader) {
-        return readerDao.save(reader);
+        return readerRepository.save(reader);
     }
 }

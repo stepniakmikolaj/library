@@ -1,4 +1,4 @@
-package com.crud.library.dao;
+package com.crud.library.repository;
 
 import com.crud.library.model.Reader;
 import org.springframework.data.repository.CrudRepository;
@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface ReaderDao extends CrudRepository<Reader, Long> {
+public interface ReaderRepository extends CrudRepository<Reader, Long> {
     @Override
     List<Reader> findAll();
 

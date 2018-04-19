@@ -1,6 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.Service.BorrowingService;
+import com.crud.library.service.BorrowingService;
 import com.crud.library.dto.BorrowingDto;
 import com.crud.library.mapper.BorrowingMapper;
 import com.crud.library.model.Borrowing;
@@ -22,17 +22,17 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 public class BorrowingController {
 
     @Autowired
-    BorrowingService borrowingService;
+    private BorrowingService borrowingService;
 
     @Autowired
-    BorrowingMapper borrowingMapper;
+    private BorrowingMapper borrowingMapper;
 
     @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
     public void addBorrow(@RequestBody BorrowingDto borrowingDto) {
         borrowingService.saveBorrowing(new Borrowing(borrowingDto.getIdVolume(), borrowingDto.getIdReader(), Date.from(Instant.now()), Date.from(Instant.now().plus(90, ChronoUnit.DAYS))));
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "{id}/return")
+    @RequestMapping(method = RequestMethod.PUT, value = "{id}/return")
     public BorrowingDto returnVolume(@PathVariable("id") Long id) {
         Optional<Borrowing> editedBorrowing = borrowingService.findById(id);
         editedBorrowing.ifPresent(e -> e.setDateOfReturn(Date.from(Instant.now())));

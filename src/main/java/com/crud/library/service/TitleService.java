@@ -1,6 +1,6 @@
-package com.crud.library.Service;
+package com.crud.library.service;
 
-import com.crud.library.dao.TitleDao;
+import com.crud.library.repository.TitleRepository;
 import com.crud.library.model.Title;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +11,9 @@ import javax.transaction.Transactional;
 @Service
 public class TitleService {
     @Autowired
-    TitleDao titleDao;
+    private TitleRepository titleRepository;
 
     public Title saveTitle(final Title title) {
-        return titleDao.save(title);
+        return titleRepository.save(title);
     }
 }

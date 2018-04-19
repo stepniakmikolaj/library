@@ -1,4 +1,4 @@
-package com.crud.library.dao;
+package com.crud.library.repository;
 
 import com.crud.library.model.Borrowing;
 import org.springframework.data.repository.CrudRepository;
@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface BorrowingDao extends CrudRepository<Borrowing, Long> {
+public interface BorrowingRepository extends CrudRepository<Borrowing, Long> {
     @Override
     List<Borrowing> findAll();
 

@@ -1,6 +1,6 @@
-package com.crud.library.Service;
+package com.crud.library.service;
 
-import com.crud.library.dao.BorrowingDao;
+import com.crud.library.repository.BorrowingRepository;
 import com.crud.library.model.Borrowing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,13 +12,13 @@ import java.util.Optional;
 @Service
 public class BorrowingService {
     @Autowired
-    BorrowingDao borrowingDao;
+    private BorrowingRepository borrowingRepository;
 
     public Borrowing saveBorrowing(final Borrowing borrowing) {
-        return borrowingDao.save(borrowing);
+        return borrowingRepository.save(borrowing);
     }
 
     public Optional<Borrowing> findById(final Long id) {
-        return borrowingDao.findById(id);
+        return borrowingRepository.findById(id);
     }
 }

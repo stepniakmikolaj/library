@@ -1,6 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.Service.VolumeService;
+import com.crud.library.service.VolumeService;
 import com.crud.library.dto.VolumeDto;
 import com.crud.library.mapper.VolumeMapper;
 import com.crud.library.model.Status;
@@ -22,9 +22,9 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 public class VolumeController {
 
     @Autowired
-    VolumeService volumeService;
+    private VolumeService volumeService;
     @Autowired
-    VolumeMapper volumeMapper;
+    private VolumeMapper volumeMapper;
 
     @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
     public void addVolume(@RequestBody VolumeDto volumeDto) {

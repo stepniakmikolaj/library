@@ -1,6 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.Service.TitleService;
+import com.crud.library.service.TitleService;
 import com.crud.library.dto.TitleDto;
 import com.crud.library.mapper.TitleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +20,9 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 public class TitleController {
 
     @Autowired
-    TitleService titleService;
+    private TitleService titleService;
     @Autowired
-    TitleMapper titleMapper;
+    private TitleMapper titleMapper;
 
     @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
     public void addTitle(@RequestBody TitleDto titleDto) {

@@ -35,7 +35,7 @@ public class Borrowing {
     @Column(name = "DATE_OF_RETURN")
     private Date dateOfReturn;
 
-    public Borrowing(Long idVolume, Long idReader, Date dateOfRental, Date dateOfReturn) {
+    public Borrowing(final Long idVolume, final Long idReader, final Date dateOfRental, final Date dateOfReturn) {
         this.idVolume = idVolume;
         this.idReader = idReader;
         this.dateOfRental = dateOfRental;
