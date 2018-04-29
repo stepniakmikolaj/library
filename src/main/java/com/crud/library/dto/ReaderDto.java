@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -14,5 +14,5 @@ import java.util.Date;
 public class ReaderDto {
     private String firstName;
     private String lastName;
-    private Date singUpDate;
+    private LocalDateTime singUpDate;
 }

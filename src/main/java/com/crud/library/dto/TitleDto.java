@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,5 +12,5 @@ import java.util.Date;
 public class TitleDto {
     private String title;
     private String author;
-    private Date releaseDate;
+    private int releaseDate;
 }

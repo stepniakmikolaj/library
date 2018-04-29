@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Getter
 @NoArgsConstructor
@@ -23,9 +22,9 @@ public class Title {
     private String author;
 
     @Column(name = "RELEASE_DATE")
-    private Date releaseDate;
+    private int releaseDate;
 
-    public Title(final String title, final String author, final Date releaseDate) {
+    public Title(final String title, final String author, final int releaseDate) {
         this.title = title;
         this.author = author;
         this.releaseDate = releaseDate;

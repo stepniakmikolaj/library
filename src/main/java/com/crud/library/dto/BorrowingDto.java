@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -14,6 +14,6 @@ import java.util.Date;
 public class BorrowingDto {
     private Long idVolume;
     private Long idReader;
-    private Date rented;
-    private Date returned;
+    private LocalDateTime rented;
+    private LocalDateTime returned;
 }

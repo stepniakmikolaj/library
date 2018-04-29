@@ -14,6 +14,4 @@ public interface VolumeRepository extends CrudRepository<Volume, Long> {
 
     List<Volume> findAllByIdTitle(Long id);
 
-    @Override
-    Volume save(Volume volume);
 }

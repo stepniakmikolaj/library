@@ -29,4 +29,10 @@ public class ReaderMapper {
                 .collect(Collectors.toList());
     }
 
+    public List<Reader> mapToReaderList(final List<ReaderDto> readerDtoList) {
+        return readerDtoList.stream()
+                .map(this::mapToReader)
+                .collect(Collectors.toList());
+    }
+
 }

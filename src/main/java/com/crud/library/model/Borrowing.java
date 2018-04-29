@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,12 +30,12 @@ public class Borrowing {
     private Long idReader;
 
     @Column(name = "DATE_OF_RENTAL")
-    private Date dateOfRental;
+    private LocalDateTime dateOfRental;
 
     @Column(name = "DATE_OF_RETURN")
-    private Date dateOfReturn;
+    private LocalDateTime dateOfReturn;
 
-    public Borrowing(final Long idVolume, final Long idReader, final Date dateOfRental, final Date dateOfReturn) {
+    public Borrowing(final Long idVolume, final Long idReader, final LocalDateTime dateOfRental, final LocalDateTime dateOfReturn) {
         this.idVolume = idVolume;
         this.idReader = idReader;
         this.dateOfRental = dateOfRental;

@@ -21,7 +21,7 @@ public class VolumeMapper {
                 volume.getStatus());
     }
 
-    public List<VolumeDto> mapToVolumeList(final List<Volume> volumeList) {
+    public List<VolumeDto> mapToVolumeDtoList(final List<Volume> volumeList) {
         return volumeList.stream()
                 .map(this::mapToVolumeDto)
                 .collect(Collectors.toList());
