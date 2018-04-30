@@ -1,8 +1,6 @@
 package com.crud.library.controller;
 
 import com.crud.library.dto.BorrowingDto;
-import com.crud.library.mapper.BorrowingMapper;
-import com.crud.library.model.Borrowing;
 import com.crud.library.service.BorrowingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
