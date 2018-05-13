@@ -15,18 +15,18 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Transactional
 @RestController
-@RequestMapping("/library/reader")
+@RequestMapping("library")
 public class ReaderController {
 
     @Autowired
     private ReaderService readerService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "list")
+    @RequestMapping(method = RequestMethod.GET, value = "readers")
     public List<ReaderDto> getList() {
         return readerService.getAllReaders();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "reader", consumes = APPLICATION_JSON_VALUE)
     public void addReader(@RequestBody ReaderDto readerDto) {
         readerService.saveReader(readerDto);
     }

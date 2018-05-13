@@ -16,18 +16,18 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @Transactional
 
 @RestController
-@RequestMapping("library/title")
+@RequestMapping("library")
 public class TitleController {
 
     @Autowired
     private TitleService titleService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "add", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "title", consumes = APPLICATION_JSON_VALUE)
     public void addTitle(@RequestBody TitleDto titleDto) {
         titleService.saveTitle(titleDto);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "list")
+    @RequestMapping(method = RequestMethod.GET, value = "titles")
     public List<TitleDto> getTitles() {
         return titleService.getAllTitles();
     }

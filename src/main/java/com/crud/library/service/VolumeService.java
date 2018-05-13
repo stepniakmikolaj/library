@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Transactional
@@ -26,7 +27,7 @@ public class VolumeService {
         return volumeMapper.mapToVolumeDto(volume);
     }
 
-    public List<VolumeDto> findAllByIdTitle(Long idTitle) {
+    public List<VolumeDto> findAllReadyByIdTitle(Long idTitle) {
         final Status status = Status.READY;
         List<Volume> allByIdTitle = volumeRepository.findAllByIdTitle(idTitle);
         List<Volume> filteredVolumes = allByIdTitle.stream()
@@ -37,5 +38,11 @@ public class VolumeService {
 
     public List<VolumeDto> getAllVolumes() {
         return volumeMapper.mapToVolumeDtoList(volumeRepository.findAll());
+    }
+
+    public VolumeDto editVolumeStatus(Long id, VolumeDto volumeDto) {
+        Optional<Volume> volume = volumeRepository.findById(id);
+        volume.ifPresent(v -> v.setStatus(volumeDto.getStatus()));
+        return volumeMapper.mapToVolumeDto(volumeRepository.save(volume.get()));
     }
 }
