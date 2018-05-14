@@ -14,7 +14,7 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @Transactional
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("library")
+@RequestMapping("library/volumes")
 public class VolumeController {
 
     @Autowired
@@ -22,22 +22,22 @@ public class VolumeController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "volumes")
+    @RequestMapping(method = RequestMethod.GET)
     public List<VolumeDto> getVolumes() {
         return volumeService.getAllVolumes();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "volume", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, consumes = APPLICATION_JSON_VALUE)
     public void addVolume(@RequestBody VolumeDto volumeDto) {
         volumeService.saveVolume(volumeDto);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "volume/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "{id}")
     public List<VolumeDto> getVolumeByIdTitle(@PathVariable() Long id) {
         return volumeService.findAllReadyByIdTitle(id);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "volume/{id}", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, value = "{id}", consumes = APPLICATION_JSON_VALUE)
     public VolumeDto updateStatusVolume(@PathVariable Long id, @RequestBody VolumeDto volumeDto) throws NotFoundException {
         return volumeService.editVolumeStatus(id, volumeDto);
     }

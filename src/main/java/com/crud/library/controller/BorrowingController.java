@@ -13,23 +13,23 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 @Transactional
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("library")
+@RequestMapping("library/borrowings")
 public class BorrowingController {
 
     @Autowired
     private BorrowingService borrowingService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "borrowings")
+    @RequestMapping(method = RequestMethod.GET)
     public List<BorrowingDto> getList() {
         return borrowingService.getAllBorrowings();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "borrowing", consumes = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, consumes = APPLICATION_JSON_VALUE)
     public void addBorrow(@RequestBody BorrowingDto borrowingDto) {
         borrowingService.saveBorrowing(borrowingDto);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "borrowing")
+    @RequestMapping(method = RequestMethod.PUT)
     public BorrowingDto returnBorrow(@RequestBody BorrowingDto borrowingDto) {
         return borrowingService.saveBorrowing(borrowingDto);
     }
